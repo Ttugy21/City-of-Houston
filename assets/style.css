@@ -12,6 +12,10 @@ img {
 body {
   background: grey;
   font-family: Arial, sans-serif;
+  
+  /* @media (min-width: 768px) {
+    outline: 10px dotted red;
+  } */
 }
 
 h3 {
@@ -23,7 +27,7 @@ h3 {
 p {
   font-size: 1rem;
   line-height: 1.5;
-  color: #030;
+  color: #111;
 
   &.eyebrow {
     font-size: 0.75rem;
@@ -62,16 +66,24 @@ p {
     max-width: 1200px;
     height: auto;
     margin: 0 auto;
-    padding: 100px 0;
+    padding-block: 32px;
+    padding-inline: 0px;
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @media (min-width: 768px) {
+      padding-block: 100px;
+      padding-inline: 0px;
+    }
   }
   
   &.block--section {
     background: #fffeec;
     display: flex;
     flex-direction: column;
+    padding-inline: 12px;
+    padding-block: 12px;
   }
 
   .block--header {
@@ -82,8 +94,17 @@ p {
 
   .block--card--wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    @media (min-width: 1020px) {
+      flex-wrap: nowrap;
+    }
   }
 
   .block--card {
@@ -95,6 +116,14 @@ p {
     width: 100%;
     background: #ffffff;  
     overflow: hidden;
+
+    @media (min-width: 960px) {
+      max-width: 48%;
+    }
+
+    @media (min-width: 1020px) {
+      max-width: 100%;
+    }
 
     .block--card__media {
       width: 100%;
